@@ -88,17 +88,14 @@ kind: Ingress
 metadata:
   name: podinfo
   labels:
-    helm.sh/chart: ck8s-user-demo-0.1.0
-    app.kubernetes.io/name: ck8s-user-demo
-    app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/name: podinfo
     app.kubernetes.io/managed-by: Helm
   annotations:
     cert-manager.io/cluster-issuer: sectigo-clusterwide
 spec:
   ingressClassName: nginx
   rules:
-    - host: "demo.osl1.prod.rail.uhdc.no"
+    - host: "podinfo.osl1.prod.rail.uhdc.no"
       http:
         paths:
           - path: /
