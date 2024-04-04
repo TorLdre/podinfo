@@ -21,6 +21,9 @@ spec:
       labels:
         app: podinfo
     spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
       containers:
       - name: podinfod
         image: ghcr.io/stefanprodan/podinfo:6.6.1
