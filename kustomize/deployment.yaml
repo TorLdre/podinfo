@@ -26,7 +26,7 @@ spec:
         runAsUser: 1000
       containers:
       - name: podinfod
-        image: ghcr.io/stefanprodan/podinfo:6.6.1
+        image: ghcr.io/stefanprodan/podinfo:6.6.0
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
