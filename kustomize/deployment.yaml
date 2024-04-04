@@ -81,3 +81,26 @@ spec:
       volumes:
         - name: data
           emptyDir: {}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+  metadata:
+    name: podinfo-ingress
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    ingressClassName: nginx
+    rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: podinfo
+              port:
+                number: 9898
+    hostname: podinfo.osl1.prod.rail.uhdc.no
+    tls: true
+    annotations:
+      cert-manager.io/cluster-issuer: sectigo-clusterwide
