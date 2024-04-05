@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo
-  namespace: adm-it-dlp
+  namespace: pf-podinfo
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
