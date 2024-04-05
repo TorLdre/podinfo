@@ -88,6 +88,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: podinfo
+  namespace: pf-podinfo
   labels:
     app.kubernetes.io/name: podinfo
     app.kubernetes.io/managed-by: Helm
