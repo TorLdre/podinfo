@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: podinfo
-  namespace: pf-podinfo
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -88,7 +87,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: podinfo
-  namespace: pf-podinfo
   labels:
     app.kubernetes.io/name: podinfo
     app.kubernetes.io/managed-by: Helm
